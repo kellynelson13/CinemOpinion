@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const app = express();
 const db = mongoose.connection;
+const moviesController = require('./controllers/movies.js')
 
 //==================
 //// PORT///////
@@ -26,7 +27,7 @@ mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true
     
     // Error / success
     db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
-    db.on('connected', () => console.log('mongod connected: ', MONGODB_URI));
+    db.on('connected', () => console.log('mongod connected'));
     db.on('disconnected', () => console.log('mongod disconnected'));
 
 //===============================
@@ -36,12 +37,13 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use('/movies', moviesController);
 
 //=====================
 /////// ROUTES ///////
 //=====================
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.render('index.ejs')
 });
 
 //======================
