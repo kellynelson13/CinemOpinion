@@ -32,7 +32,16 @@ movieRouter.get('/new', (req, res) => {
 ////// CREATE ////////
 movieRouter.post('/', (req, res) => {
     Movie.create(req.body, (error, createdMovie) => {
-        res.send(createdMovie)
+        res.redirect('/movies');
+    })
+})
+
+////// SHOW /////////
+movieRouter.get('/:id', (req, res) => {
+    Movie.findById(req.params.id, (error, foundMovie) => {
+        res.render('movies/show.ejs', {
+            movie: foundMovie
+        })
     })
 })
 
