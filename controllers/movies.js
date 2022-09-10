@@ -43,6 +43,15 @@ movieRouter.post('/', (req, res) => {
     })
 })
 
+/////// EDIT ///////////
+movieRouter.get('/:id/edit', (req, res) => {
+    Movie.findById(req.params.id, (error, foundMovie) => {
+        res.render('movies/edit.ejs', {
+            movie: foundMovie
+        })
+    })
+})
+
 ////// SHOW /////////
 movieRouter.get('/:id', (req, res) => {
     Movie.findById(req.params.id, (error, foundMovie) => {
