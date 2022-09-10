@@ -38,7 +38,8 @@ movieRouter.delete('/:id', (req, res) => {
 
 ////// Update /////////
 movieRouter.put('/:id', (req, res) => {
-    Movie.findByIdAndUpdate(req.params.id, req.body, (error, updatedMovie) => {
+    Movie.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedMovie) => {
+        console.log(updatedMovie)
         const sum = updatedMovie.writing + 
         updatedMovie.direction +
         updatedMovie.cinematography +
@@ -59,6 +60,7 @@ movieRouter.put('/:id', (req, res) => {
 ////// CREATE ////////
 movieRouter.post('/', (req, res) => {
     Movie.create(req.body, (error, createdMovie) => {
+        
         const sum = createdMovie.writing + 
         createdMovie.direction +
         createdMovie.cinematography +
