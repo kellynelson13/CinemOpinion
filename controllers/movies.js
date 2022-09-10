@@ -29,6 +29,13 @@ movieRouter.get('/new', (req, res) => {
     res.render('movies/new.ejs');
 })
 
+/////// DELETE ///////
+movieRouter.delete('/:id', (req, res) => {
+    Movie.findByIdAndDelete(req.params.id, (error, deletedMovie) => {
+        res.redirect('/movies');
+    })
+})
+
 ////// CREATE ////////
 movieRouter.post('/', (req, res) => {
     Movie.create(req.body, (error, createdMovie) => {
