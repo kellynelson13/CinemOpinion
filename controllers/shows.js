@@ -24,6 +24,11 @@ showsRouter.delete('/:id', (req, res) => {
 })
 
 //////// UPDATE ///////
+showsRouter.put('/:id', (req, res) => {
+    Shows.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedShow) => {
+        res.send(updatedShow)
+    })
+})
 
 //////// CREATE ////////
 showsRouter.post('/', (req, res) => {
@@ -33,7 +38,21 @@ showsRouter.post('/', (req, res) => {
 })
 
 //////// EDIT /////////
+showsRouter.get('/:id/edit', (req, res) => {
+    Shows.findById(req.params.id, (error, foundShow) => {
+        res.render('shows/edit.ejs', {
+            show: foundShow
+        })
+    })
+})
 
 /////// SHOW /////////
+showsRouter.get('/:id', (req, res) => {
+    Shows.findById(req.params.id, (error, foundShow) => {
+        res.render('shows/show.ejs', {
+            show: foundShow
+        })
+    })
+})
 
 module.exports = showsRouter;
