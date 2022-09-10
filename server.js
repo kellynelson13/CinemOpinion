@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const app = express();
 const db = mongoose.connection;
 const moviesController = require('./controllers/movies.js')
+const showsController = require('./controllers/shows.js')
 
 //==================
 //// PORT///////
@@ -38,6 +39,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use('/movies', moviesController);
+app.use('/shows', showsController);
 
 //=====================
 /////// ROUTES ///////
