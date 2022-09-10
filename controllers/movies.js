@@ -39,7 +39,7 @@ movieRouter.delete('/:id', (req, res) => {
 ////// Update /////////
 movieRouter.put('/:id', (req, res) => {
     Movie.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedMovie) => {
-        console.log(updatedMovie)
+        
         const sum = updatedMovie.writing + 
         updatedMovie.direction +
         updatedMovie.cinematography +

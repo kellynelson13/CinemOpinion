@@ -4,14 +4,18 @@
     <%- include('../partials/head.ejs')%>
 </head>
 <body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
     <h1>Movie Reviews</h1>
     <% for(let i = 0; i < movies.length; i++) {%>
-        <div id="img-container">
-            <img src="<%= movies[i].img%>" alt="<%= movies[i].title%>">
+        <div id="img-left">
+            <a href="/movies/<%=movies[i]._id%>"><img src="<%= movies[i].img%>" alt="<%= movies[i].title%>"></a>
         </div>
-        <div id="info-container">
-            <h2><%= movies[i].title%></h2>
+        <div id="info-right">
+            <h2><a href="/movies/<%=movies[i]._id%>"><%= movies[i].title%></a></h2>
             <h3><%= movies[i].overall%>/10</h3>
+            <button><a href="/movies/<%=movies[i]._id%>">See Full Review</a></button>
             <hr>
         </div>
     <% } %>
