@@ -39,6 +39,19 @@ movieRouter.delete('/:id', (req, res) => {
 ////// Update /////////
 movieRouter.put('/:id', (req, res) => {
     Movie.findByIdAndUpdate(req.params.id, req.body, (error, updatedMovie) => {
+        const sum = updatedMovie.writing + 
+        updatedMovie.direction +
+        updatedMovie.cinematography +
+        updatedMovie.acting +
+        updatedMovie.editing +
+        updatedMovie.sound +
+        updatedMovie.soundtrack +
+        updatedMovie.production_design +
+        updatedMovie.casting +
+        updatedMovie.effects;
+        
+        updatedMovie.overall = sum / 10;
+        updatedMovie.save();
         res.redirect(`/movies/${req.params.id}`)
     })
 })
