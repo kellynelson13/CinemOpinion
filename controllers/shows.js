@@ -17,10 +17,20 @@ showsRouter.get('/new', (req, res) => {
 })
 
 /////// DELETE ////////
+showsRouter.delete('/:id', (req, res) => {
+    Shows.findByIdAndDelete(req.params.id, (error, deletedShow) => {
+        res.redirect('/shows')
+    })
+})
 
 //////// UPDATE ///////
 
 //////// CREATE ////////
+showsRouter.post('/', (req, res) => {
+    Shows.create(req.body, (error, createdShow) => {
+        res.redirect('/shows')
+    })
+})
 
 //////// EDIT /////////
 
