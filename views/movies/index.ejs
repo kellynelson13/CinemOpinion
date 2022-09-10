@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemOpinion</title>
+    <%- include('../partials/head.ejs')%>
 </head>
 <body>
     <h1>Movie Reviews</h1>
+    <% for(let i = 0; i < movies.length; i++) {%>
+        <div id="img-container">
+            <img src="<%= movies[i].img%>" alt="<%= movies[i].title%>">
+        </div>
+        <div id="info-container">
+            <h2><%= movies[i].title%></h2>
+            <h3><%= movies[i].overall%>/10</h3>
+        </div>
+    <% } %>
 </body>
 </html>
