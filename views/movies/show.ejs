@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemOpinion</title>
+    <%- include('../partials/head.ejs')%>
 </head>
 <body>
-    <h1>Show page</h1>
+    <section id="banner">
+        <img src="<%= movie.img%>" alt="<%= movie.title%>">
+    </section>
+    <h1><%= movie.title%></h1>
+    <h3>Review by: <%= movie.review_author%></h3>
+
+    <section id="left-side">
+        <p>Writing: <%= movie.writing%>/10</p>
+        <p>Direction: <%= movie.direction%>/10</p>
+        <p>Cinematography: <%= movie.cinematography%>/10</p>
+        <p>Acting: <%= movie.acting%>/10</p>
+        <p>Editing: <%= movie.editing%>/10</p>
+        <p>Sound: <%= movie.sound%>/10</p>
+        <p>Soundtrack: <%= movie.soundtrack%>/10</p>
+        <p>Production Design:<%= movie.production_design%>/10</p>
+        <p>Casting: <%= movie.casting%>/10</p>
+        <p>Effects: <%= movie.effects%>/10</p>
+        
+        <p>Overall Rating: <%= movie.overall%>/10</p>
+    </section>
+
+    <section id="right-side">
+        <p><%= movie.review%></p>
+    </section>
 </body>
 </html>
