@@ -36,6 +36,13 @@ movieRouter.delete('/:id', (req, res) => {
     })
 })
 
+////// Update /////////
+movieRouter.put('/:id', (req, res) => {
+    Movie.findByIdAndUpdate(req.params.id, req.body, (error, updatedMovie) => {
+        res.redirect(`/movies/${req.params.id}`)
+    })
+})
+
 ////// CREATE ////////
 movieRouter.post('/', (req, res) => {
     Movie.create(req.body, (error, createdMovie) => {
