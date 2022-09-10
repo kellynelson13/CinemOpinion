@@ -46,6 +46,20 @@ movieRouter.put('/:id', (req, res) => {
 ////// CREATE ////////
 movieRouter.post('/', (req, res) => {
     Movie.create(req.body, (error, createdMovie) => {
+        const sum = createdMovie.writing + 
+        createdMovie.direction +
+        createdMovie.cinematography +
+        createdMovie.acting +
+        createdMovie.editing +
+        createdMovie.sound +
+        createdMovie.soundtrack +
+        createdMovie.production_design +
+        createdMovie.casting +
+        createdMovie.effects;
+        
+        createdMovie.overall = sum / 10;
+        createdMovie.save();
+
         res.redirect('/movies');
     })
 })
