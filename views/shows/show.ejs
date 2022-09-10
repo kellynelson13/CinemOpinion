@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemOpinion</title>
+    <%- include('../partials/head.ejs')%>
 </head>
 <body>
-    <h1>Show Page</h1>
+    <nav>
+        <a href="/shows" >All Show Reviews</a>
+    </nav>
+    <section id="banner">
+        <img src="<%= show.img%>" alt="<%= show.title%>">
+    </section>
+    <h1><%= show.title%></h1>
+    <h3>Review by: <%= show.review_author%></h3>
+
+    <section id="left-side">
+        <p>Writing: <%= show.writing%>/10</p>
+        <p>Direction: <%= show.direction%>/10</p>
+        <p>Cinematography: <%= show.cinematography%>/10</p>
+        <p>Acting: <%= show.acting%>/10</p>
+        <p>Editing: <%= show.editing%>/10</p>
+        <p>Sound: <%= show.sound%>/10</p>
+        <p>Soundtrack: <%= show.soundtrack%>/10</p>
+        <p>Production Design:<%= show.production_design%>/10</p>
+        <p>Casting: <%= show.casting%>/10</p>
+        <p>Effects: <%= show.effects%>/10</p>
+        
+        <p>Overall Rating: <%= show.overall%>/10</p>
+    </section>
+
+    <section id="right-side">
+        <h3>Review</h3>
+        <p><%= show.review%></p>
+    </section>
+    <section id="buttons">
+        <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete This Review">
+        </form>
+        <button><a href="/shows/<%=show._id%>/edit">Edit This Review</a></button>
+    </section>
 </body>
 </html>

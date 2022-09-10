@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemOpinion</title>
+    <%- include('../partials/head.ejs')%>
 </head>
 <body>
-    <h1>Edit Page</h1>
+    <h1>Edit Show Review</h1>
+    <form action="/shows/<%=show._id%>?_method=PUT" method="POST">
+        <fieldset>
+            <legend>Show Information</legend>
+            <!----------Show title ---------->
+            <label for="title">Show Title</label>
+            <input type="text" id="title" name="title" value="<%= show.title%>"><br>
+            <!----------Show Image URL---------->
+            <label for="image">Show Image URL</label>
+            <input type="text" name="img" id="image" value="<%= show.img%>"><br>
+            <!----------Review Author ---------->
+            <label for="author">Review Author</label>
+            <input type="text" name="review_author" value="<%= show.review_author%>" id="author" >
+        </fieldset>
+        <fieldset>
+            <legend>Show Ratings (1-10) By Category</legend>
+
+            <label for="writing">Writing</label>
+            <input type="number" min="1" max="10" id="writing" value="<%= show.writing%>" name="writing"><br>
+
+            <label for="direction">Direction</label>
+            <input type="number" min="1" max="10" id="direction" value="<%= show.direction%>" name="direction"><br>
+
+            <label for="cinematography">Cinematography</label>
+            <input type="number" min="1" max="10" value="<%= show.cinematography%>" id="cinematography" name="cinematography"><br>
+
+            <label for="acting">Acting</label>
+            <input type="number" min="1" max="10" value="<%= show.acting%>" id="acting" name="acting"><br>
+
+            <label for="editing">Editing</label>
+            <input type="number" min="1" max="10" value="<%= show.editing%>" id="editing" name="editing"><br>
+
+            <label for="sound">Sound Design</label>
+            <input type="number" min="1" max="10" value="<%= show.sound%>" id="sound" name="sound"><br>
+
+            <label for="soundtrack">Score/Soundtrack</label>
+            <input type="number" min="1" max="10" value="<%= show.soundtrack%>" id="soundtrack" name="soundtrack"><br>
+
+            <label for="production_design">Production Design</label>
+            <input type="number" min="1" max="10" value="<%= show.production_design%>" id="production_design" name="production_design"><br>
+
+            <label for="casting">Casting</label>
+            <input type="number" min="1" max="10" value="<%= show.casting%>" id="casting" name="casting"><br>
+
+            <label for="effects">Effects</label>
+            <input type="number" min="1" max="10" value="<%= show.effects%>" id="effects" name="effects"><br>
+        </fieldset>
+        <fieldset>
+            <legend>Written Review</legend>
+            <textarea name="review" cols="70" rows="10"><%= show.review%></textarea>
+        </fieldset>
+        <input type="submit" value="Submit Edit">
+    </form>
+    <button><a href="/shows/<%=show._id%>">Back</a></button>
 </body>
 </html>
