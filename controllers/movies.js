@@ -24,4 +24,16 @@ movieRouter.get('/', (req, res) => {
     })
 })
 
+/////// NEW ////////
+movieRouter.get('/new', (req, res) => {
+    res.render('movies/new.ejs');
+})
+
+////// CREATE ////////
+movieRouter.post('/', (req, res) => {
+    Movie.create(req.body, (error, createdMovie) => {
+        res.send(createdMovie)
+    })
+})
+
 module.exports = movieRouter;
