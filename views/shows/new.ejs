@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
-    <!-- <link rel="stylesheet" href="style_new.css"> -->
+    <link rel="stylesheet" href="/style_new.css"/>
 </head>
 <body>
     <h1>Create New Review</h1>
@@ -56,7 +56,9 @@
             <legend>Written Review</legend>
             <textarea name="review" cols="70" rows="10" placeholder="Let us know your thoughts on the show"></textarea>
         </fieldset>
+        <div id="submit">
         <input type="submit" value="Create Review">
+    </div>
     </form>
 </body>
 </html>

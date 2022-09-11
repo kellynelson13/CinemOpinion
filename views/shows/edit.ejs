@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="/style_new.css"/>
 </head>
 <body>
     <h1>Edit Show Review</h1>
@@ -55,7 +56,9 @@
             <legend>Written Review</legend>
             <textarea name="review" cols="70" rows="10"><%= show.review%></textarea>
         </fieldset>
+        <div id="submit">
         <input type="submit" value="Submit Edit">
+    </div>
     </form>
     <button><a href="/shows/<%=show._id%>">Back</a></button>
 </body>
