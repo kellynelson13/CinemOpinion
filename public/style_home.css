@@ -41,7 +41,6 @@ div {
 }
 div:hover {
     cursor: pointer;
-    transform: translate(0, -10px);
-    
+    transform: translate(0, -8px);
 }
 

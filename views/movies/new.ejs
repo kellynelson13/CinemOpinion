@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="/style_new.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <h1>Create New Review</h1>
     <form action="/movies" method="POST">
-        <fieldset>
+        <fieldset class="movie-info">
             <legend>Movie Information</legend>
             <!----------Movie title ---------->
             <label for="title">Movie Title</label>
@@ -18,7 +23,7 @@
             <label for="author">Review Author</label>
             <input type="text" name="review_author" id="author" placeholder="Your name here">
         </fieldset>
-        <fieldset>
+        <fieldset class="ratings">
             <legend>Movie Ratings (1-10) By Category</legend>
 
             <label for="writing">Writing</label>
@@ -51,11 +56,13 @@
             <label for="effects">Effects</label>
             <input type="number" min="1" max="10" id="effects" name="effects"><br>
         </fieldset>
-        <fieldset>
+        <fieldset class="written">
             <legend>Written Review</legend>
             <textarea name="review" cols="70" rows="10" placeholder="Let us know your thoughts on the movie"></textarea>
         </fieldset>
+        <div id="submit">
         <input type="submit" value="Create Review">
+    </div>
     </form>
 </body>
 </html>
