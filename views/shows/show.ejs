@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="/style_show.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <a href="/shows" >All Show Reviews</a>
     </nav>
+    <h1><%= show.title%></h1>
+    <h4>Review by: <%= show.review_author%></h4>
     <section id="banner">
         <img src="<%= show.img%>" alt="<%= show.title%>">
     </section>
-    <h1><%= show.title%></h1>
-    <h3>Review by: <%= show.review_author%></h3>
+    
 
     <section id="left-side">
+        <p><strong>Ratings by Category:</strong></p>
         <p>Writing: <%= show.writing%>/10</p>
         <p>Direction: <%= show.direction%>/10</p>
         <p>Cinematography: <%= show.cinematography%>/10</p>
@@ -36,7 +42,7 @@
         <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete This Review">
         </form>
-        <button><a href="/shows/<%=show._id%>/edit">Edit This Review</a></button>
+        <button><a id="edit" href="/shows/<%=show._id%>/edit">Edit This Review</a></button>
     </section>
 </body>
 </html>

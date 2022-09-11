@@ -1,3 +1,60 @@
 body {
-    background-color: blanchedalmond;
+    background-color: #dcd9d9;
+    font-family: "Poppins";
+}
+h1, h4 {
+    text-align: center;
+    font-family: "Poppins";
+}
+img {
+    width: 70%;
+    border-radius: 10px;
+}
+#banner {
+    display: flex;
+    justify-content: center;
+}
+
+#left-side, #right-side {
+    display: inline-block;
+}
+
+#right-side {
+    width: 50%;
+    position: relative;
+    
+    padding: 0 20px;
+    margin-bottom: 30px;
+    bottom: 130px;
+}
+
+#left-side {
+    width: 30%;
+    border-right: solid 1px #969696;
+    padding: 10px 0 5px 70px;
+    margin: 15px 0 0 30px;
+}
+#buttons {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+input[type=submit], button {
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: none;
+    font-family: "Poppins";
+    box-shadow: 3px 5px #969696;
+}
+input[type=submit]:hover, button:hover {
+    background-color:#969696;
+    box-shadow: 3px 5px white;
+}
+#edit {
+    text-decoration: none;
+    color: black;
+    
 }

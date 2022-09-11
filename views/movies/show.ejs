@@ -3,18 +3,23 @@
 <head>
     <%- include('../partials/head.ejs')%>
     <link rel="stylesheet" href="/style_show.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
         <a href="/movies" >All Movie Reviews</a>
     </nav>
+    <h1><%= movie.title%></h1>
+    <h4>Review by: <%= movie.review_author%></h3>
     <section id="banner">
         <img src="<%= movie.img%>" alt="<%= movie.title%>">
     </section>
-    <h1><%= movie.title%></h1>
-    <h3>Review by: <%= movie.review_author%></h3>
-
+    
+<div class="container">
     <section id="left-side">
+        <p><strong>Ratings by Category:</strong></p>
         <p>Writing: <%= movie.writing%>/10</p>
         <p>Direction: <%= movie.direction%>/10</p>
         <p>Cinematography: <%= movie.cinematography%>/10</p>
@@ -33,11 +38,13 @@
         <h3>Review</h3>
         <p><%= movie.review%></p>
     </section>
+</div>
+
     <section id="buttons">
         <form action="/movies/<%=movie._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete This Review">
         </form>
-        <button><a href="/movies/<%=movie._id%>/edit">Edit This Review</a></button>
+        <button><a id="edit" href="/movies/<%=movie._id%>/edit">Edit This Review</a></button>
     </section>
 </body>
 </html>
