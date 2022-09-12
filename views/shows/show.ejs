@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
-    <link rel="stylesheet" href="/style_show.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style_show.css"/>
+    
 </head>
 <body>
-    <nav>
-        <a href="/shows" >All Show Reviews</a>
-    </nav>
+    <%- include('../partials/nav.ejs')%>
     <h1><%= show.title%></h1>
     <h4>Review by: <%= show.review_author%></h4>
     <section id="banner">
         <img src="<%= show.img%>" alt="<%= show.title%>">
     </section>
     
-
+<div class="container">
     <section id="left-side">
         <p><strong>Ratings by Category:</strong></p>
         <p>Writing: <%= show.writing%>/10</p>
@@ -38,6 +34,8 @@
         <h3>Review</h3>
         <p><%= show.review%></p>
     </section>
+</div>
+
     <section id="buttons">
         <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete This Review">

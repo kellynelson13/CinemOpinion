@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/style_new.css">
 </head>
 <body>
+    <%- include('../partials/nav.ejs')%>
     <h1>Edit Movie Review</h1>
     <form action="/movies/<%=movie._id%>?_method=PUT" method="POST">
         <fieldset>
