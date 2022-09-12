@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const showsSchema = new mongoose.Schema({
     title: { type: String, required: true },
@@ -20,4 +20,4 @@ const showsSchema = new mongoose.Schema({
 
 const Shows = mongoose.model("Shows", showsSchema);
 
-module.exports = Shows;
+export default Shows;

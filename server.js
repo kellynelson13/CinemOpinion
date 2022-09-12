@@ -1,14 +1,16 @@
 //=========================
 ////// DEPENDENCIES ////////
 //=========================
-require('dotenv').config()
-const express = require('express');
-const mongoose = require('mongoose');
-const methodOverride = require('method-override');
+import 'dotenv/config.js'
+import express from 'express';
+import mongoose from 'mongoose';
+import methodOverride from 'method-override';
 const app = express();
 const db = mongoose.connection;
-const moviesController = require('./controllers/movies.js')
-const showsController = require('./controllers/shows.js')
+import moviesController from './controllers/movies.js';
+import showsController from './controllers/shows.js';
+import postersController from './controllers/posters.js';
+
 
 //==================
 //// PORT///////
@@ -40,6 +42,7 @@ app.use(methodOverride('_method'));
 app.use(express.static("public"));
 app.use('/movies', moviesController);
 app.use('/shows', showsController);
+app.use('/posters', postersController);
 
 //=====================
 /////// ROUTES ///////

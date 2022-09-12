@@ -1,19 +1,19 @@
-const express = require("express");
+import express from "express";
 const movieRouter = express.Router();
-const Movie = require('../models/movies.js');
+import Movie from '../models/movies.js';
 
 //========================
 ////// ROUTES ///////////
 //=======================
 
 //// SEED ////
-const movieSeed = require("../models/movieSeed");
+// const movieSeed = require("../models/movieSeed");
 
-movieRouter.get('/seed', (req,res) => {
-    Movie.create(movieSeed, (error, data) => {
-        res.redirect('/movies');
-    })
-})
+// movieRouter.get('/seed', (req,res) => {
+//     Movie.create(movieSeed, (error, data) => {
+//         res.redirect('/movies');
+//     })
+// })
 
 ///// INDEX //////
 movieRouter.get('/', (req, res) => {
@@ -97,4 +97,4 @@ movieRouter.get('/:id', (req, res) => {
     })
 })
 
-module.exports = movieRouter;
+ export default movieRouter;

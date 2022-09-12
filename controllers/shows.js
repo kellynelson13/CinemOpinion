@@ -1,6 +1,6 @@
-const express = require("express");
+import express from 'express';
 const showsRouter = express.Router();
-const Shows = require("../models/shows");
+import Shows from "../models/shows.js";
 
 /////// INDEX ///////////
 showsRouter.get('/', (req, res) => {
@@ -81,4 +81,4 @@ showsRouter.get('/:id', (req, res) => {
     })
 })
 
-module.exports = showsRouter;
+export default showsRouter;

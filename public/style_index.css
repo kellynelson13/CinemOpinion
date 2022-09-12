@@ -1,6 +1,3 @@
-body {
-    background-color: aquamarine;
-}
 nav a {
     text-decoration: none;
     margin: 0 20px;
@@ -15,4 +12,24 @@ nav {
 }
 .new {
     float: right;
+}
+
+
+img {
+    width: 50%;
+}
+h1 {
+    position: relative;
+    top: 40px;
+    text-align: center;
+}
+div {
+    margin-top: 70px;
+}
+#img-left {
+    display: inline-block;
+}
+
+#info-right {
+    display: inline-block;
 }
