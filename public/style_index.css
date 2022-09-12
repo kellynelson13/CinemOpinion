@@ -1,3 +1,7 @@
+body {
+    background-color: #dcd9d9;
+    font-family: "Poppins";
+}
 nav a {
     text-decoration: none;
     margin: 0 20px;
@@ -16,7 +20,8 @@ nav {
 
 
 img {
-    width: 50%;
+    width: 70%;
+    border-radius: 10px;
 }
 h1 {
     position: relative;
@@ -26,10 +31,22 @@ h1 {
 div {
     margin-top: 70px;
 }
+.container {
+    display: inline-block;
+}
 #img-left {
     display: inline-block;
+    width: 60%;
+    border: black;
+    position: relative;
+    left: 60px;
+    bottom: 40px;
 }
 
 #info-right {
     display: inline-block;
+    border: black;
+    position: relative;
+    left: 50px;
+    bottom: 80px;
 }

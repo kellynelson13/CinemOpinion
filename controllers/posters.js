@@ -4,26 +4,51 @@ import fetch from 'node-fetch';
 
 
 posterRouter.get('/', (req, res) => {
-    res.send("posters route working")
+    res.render("movies/posters.ejs") 
 })
 
-function getMovieInfo (movieTitle) {
+posterRouter.post('/allPosters', (req, res) => {
+    res.send("working")
+    // console.log(req.body)
+    // const movie = req.body.title;
+    // const apiURL = 'http://www.omdbapi.com/?apikey=212bc66d&s=${movie}'
 
-    const apiURL = 'http://www.omdbapi.com/?apikey=212bc66d&s=${movieTitle}'
+    // fetch(apiURL, {
+    //     method: 'GET',
+    // })
+    // .then((res) => {
+    //     return res.json();
+    // })
+    // .then((data) => {
+    //     console.log(data)
+    //     // res.send(data)
+        
+    // })
+})
 
-    fetch(apiURL, {
-        method: 'GET',
-    })
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        console.log(data)
-        res.send(data)
-    })
-}
 
-// getMovieInfo("up")
+
+
+
+
+
+// function getMovieInfo (res, req, movieTitle) {
+
+//     const apiURL = 'http://www.omdbapi.com/?apikey=212bc66d&s=${movieTitle}'
+
+//     fetch(apiURL, {
+//         method: 'GET',
+//     })
+//     .then((res) => {
+//         return res.json();
+//     })
+//     .then((data) => {
+//         console.log(data)
+//         res.send(data)
+//     })
+// }
+
+//getMovieInfo("up")
 
 
 

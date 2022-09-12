@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <h1>Pick Your Movie Poster</h1>
+    <form action="/allPosters" method="POST">
+        <input type="text" name="title" placeholder="Movie Title">
+        <input type="submit" value="Search">
+    </form>
+    
+</body>
+</html>

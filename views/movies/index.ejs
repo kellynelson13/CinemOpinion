@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include('../partials/head.ejs')%>
-    <link rel="stylesheet" href="style_index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style_index.css" />
+  </head>
+  <body>
     <%- include('../partials/nav.ejs')%>
     <h1>Movie Reviews</h1>
     <% for(let i = 0; i < movies.length; i++) {%>
-        <div id="img-left">
-            <a href="/movies/<%=movies[i]._id%>"><img src="<%= movies[i].img%>" alt="<%= movies[i].title%>"></a>
-        </div>
-        <div id="info-right">
-            <h2><a href="/movies/<%=movies[i]._id%>"><%= movies[i].title%></a></h2>
-            <h3><%= movies[i].overall%>/10</h3>
-            <button><a href="/movies/<%=movies[i]._id%>">See Full Review</a></button>
-            <hr>
-        </div>
+    <div class="container">
+      <div id="img-left">
+        <a href="/movies/<%=movies[i]._id%>"
+          ><img src="<%= movies[i].img%>" alt="<%= movies[i].title%>"
+        /></a>
+      </div>
+      <div id="info-right">
+        <h2><a href="/movies/<%=movies[i]._id%>"><%= movies[i].title%></a></h2>
+        <h3><%= movies[i].overall%>/10</h3>
+        <button>
+          <a href="/movies/<%=movies[i]._id%>">See Full Review</a>
+        </button>
+      </div>
+    </div>
+    <hr />
     <% } %>
-</body>
+  </body>
 </html>
