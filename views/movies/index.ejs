@@ -5,10 +5,7 @@
     <link rel="stylesheet" href="style_index.css">
 </head>
 <body>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/movies/new">Create New Movie Review</a>
-    </nav>
+    <%- include('../partials/nav.ejs')%>
     <h1>Movie Reviews</h1>
     <% for(let i = 0; i < movies.length; i++) {%>
         <div id="img-left">
