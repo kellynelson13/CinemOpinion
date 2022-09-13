@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="style_index.css" />
 </head>
 <body>
     <%- include('../partials/nav.ejs')%>
@@ -14,8 +15,9 @@
             <h2><a href="/shows/<%=shows[i]._id%>"><%= shows[i].title%></a></h2>
             <h3><%= shows[i].overall%>/10</h3>
             <button><a href="/shows/<%=shows[i]._id%>">See Full Review</a></button>
-            <hr>
+            
         </div>
+        <hr>
     <% } %>
 </body>
 </html>

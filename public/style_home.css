@@ -4,8 +4,22 @@ body {
     justify-content: center;
     background: linear-gradient(0.25turn, #253d5b, #969696, #c6878f);
     text-align: center;
-    
-    
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: white;
+}
+nav {
+    background-color: #253d5b;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+}
+.new {
+    float: right;
 }
 section {
     display: block;

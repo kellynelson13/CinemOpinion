@@ -2,9 +2,32 @@ body {
     background-color: #dcd9d9;
     font-family: "Poppins";
 }
+nav a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: white;
+}
+nav {
+    background-color: #253d5b;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+}
+.new {
+    float: right;
+}
 h1, h4 {
     text-align: center;
     font-family: "Poppins";
+}
+h1 {
+    position: relative;
+    top: 30px;
+}
+h4 {
+    position: relative;
+    top: 17px;
 }
 img {
     width: 70%;

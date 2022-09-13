@@ -1,12 +1,31 @@
 body {
     background-color: #dcd9d9;
 }
+nav a {
+    text-decoration: none;
+    margin: 0 20px;
+    color: white;
+}
+nav {
+    background-color: #253d5b;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+}
+.new {
+    float: right;
+}
 h1 {
     font-family: "Poppins";
     font-weight: 500;
     color: #c6878f;
     border-bottom: 2px solid #c6878f;
     text-align: center;
+    
+        position: relative;
+        top: 17px;
+    
   }
   fieldset {
     
@@ -58,4 +77,8 @@ h1 {
 
   #submit {
     text-align: center;
+  }
+  form {
+    position: relative;
+        top: 30px;
   }
