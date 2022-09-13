@@ -82,3 +82,21 @@ h1 {
     position: relative;
         top: 30px;
   }
+button {
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: none;
+    font-family: "Poppins";
+    box-shadow: 3px 5px #969696;
+}
+button:hover {
+    background-color:#969696;
+    box-shadow: 3px 5px white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
