@@ -1,1 +1,2 @@
 # CinemOpinion
+A web app for movie lovers!  Here, you can read Movie and TV show reviews as well as write your own.  You are welcomed in to the Home page where you have a choice of looking at movie OR TV show reviews.  Once you make your decision, you land on the index page where you can look through all of the written reviews.  You can click on a review which takes you to it's show page.  On this page you can see the full review including category ratings and the written review.  You have the options of editing, deleting, and/or writting a new review.  Enjoy!
